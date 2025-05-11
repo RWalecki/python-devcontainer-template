@@ -1,1 +1,1 @@
-MY_SECRET_KEY = "my_secret_key"
+MY_SECRET_KEY = "here should be a secret key"
