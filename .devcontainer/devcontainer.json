@@ -6,6 +6,7 @@
 	},
 	"mounts": [
 		{"source": "${localEnv:HOME}/.cache", "target": "/root/.cache", "type": "bind"},
+		{"source": "${localEnv:HOME}/.ssh", "target": "/root/.ssh", "type": "bind"},
 		{"source": "${localEnv:HOME}/.gitconfig", "target": "/root/.gitconfig", "type": "bind"}
 	  ],
 	"customizations": {
