@@ -1,39 +1,19 @@
-# Python Development Container
+# Python Dev Container Template
 
-A Docker-based development environment for Python projects, featuring a streamlined setup with essential data science and development tools.
+A ready-to-use development container template for Python projects with VS Code integration, pre-configured extensions, and common data science libraries.
 
-## Features
+## 🚀 Quick Start
 
-- Python 3.11.12 development environment
-- Pre-installed data science packages (numpy, pandas)
-- Development tools (ipdb for debugging)
-- Git support
-- Optimized Docker build process
+### Download from GitHub (Recommended)
 
-## Prerequisites
-
-- Docker installed on your system
-- Git (optional, for version control)
-
-## Quick Start
-
-1. Build the Docker image:
-   ```bash
-   docker build -t python-dev-env .
-   ```
-
-2. Run the application:
-   ```bash
-   docker run -it --rm python-dev-env python scripts/run_app.py
-   ```
-
-## Project Structure
-
+```bash
+# Download and extract the latest version
+curl -L https://github.com/RWalecki/python-devcontainer-template/archive/refs/heads/main.zip -o repo.zip && \
+python3 -m zipfile -e repo.zip . && \
+rm repo.zip
 ```
-.
-├── src/           # Source code directory
-├── scripts/       # Executable scripts
-├── tests/         # Test files
-├── requirements.txt  # Python dependencies
-└── Dockerfile     # Docker configuration
-```
+
+##  Prerequisites
+- [Python 3](https://www.python.org/downloads/) (for downloading and extracting the template)
+- [Docker](https://docs.docker.com/get-docker/) installed and running
+- [VS Code](https://code.visualstudio.com/) with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
