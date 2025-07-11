@@ -1,22 +1,30 @@
-FROM python:3.11.12-slim
+FROM python:3.11-slim
 
-# Set working directory early
-WORKDIR /code
+WORKDIR /app
 
-# Install system dependencies and clean up in the same layer
+# Install system dependencies including download tools
 RUN apt-get update && \
-    apt-get install -y git && \
+    apt-get install -y --no-install-recommends \
+        git \
+        gcc \
+        g++ \
+        curl \
+        wget \
+        ca-certificates \
+        && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy only requirements first to leverage Docker cache
-COPY ./requirements.txt /tmp/requirements.txt
+# Copy requirements and install Python dependencies
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+# Copy application code
+COPY . /app/
 
-# Set environment variables
-ENV PYTHONPATH=/code
+# Create non-root user
+RUN useradd --create-home --shell /bin/bash app && \
+    chown -R app:app /app
 
-# Copy application code last to maximize cache usage
-COPY . /code/
+USER app

@@ -1,12 +1,9 @@
 {
-	"name": "TEMPLATE_NAME",
+	"name": "sol-traider-env",
 	"build": {
 	  "dockerfile": "../Dockerfile",
 	  "context": ".."
 	},
-	"runArgs": [
-	  "--shm-size=8g"
-	],
 	"mounts": [
 		{"source": "${localEnv:HOME}/.cache", "target": "/root/.cache", "type": "bind"}
 	  ],
@@ -29,6 +26,5 @@
 	  }
 	},
 	"remoteEnv": {
-		"API_KEY": "sk-***"
 	}
 }
