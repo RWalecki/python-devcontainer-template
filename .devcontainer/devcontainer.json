@@ -5,8 +5,9 @@
 	  "context": ".."
 	},
 	"mounts": [
-		{"source": "${localEnv:HOME}/.cache", "target": "/root/.cache", "type": "bind"},
-		{"source": "${localEnv:HOME}/.gitconfig", "target": "/root/.gitconfig", "type": "bind"}
+		{"source": "${localEnv:HOME}/.cache", "target": "/home/app/.cache", "type": "bind"},
+		{"source": "${localEnv:HOME}/.gitconfig", "target": "/home/app/.gitconfig", "type": "bind"},
+		{"source": "${localEnv:HOME}/.ssh", "target": "/home/app/.ssh", "type": "bind"}
 	  ],
 	"customizations": {
 	  "vscode": {
