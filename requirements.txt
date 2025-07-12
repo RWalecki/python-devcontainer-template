@@ -2,3 +2,4 @@ ipdb==0.13.13
 numpy==2.2.5
 tqdm==4.67.1
 pandas==2.2.3
+python-dotenv==1.1.1

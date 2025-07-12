@@ -1,1 +1,0 @@
-MY_SECRET_KEY = "here should be a secret key"
